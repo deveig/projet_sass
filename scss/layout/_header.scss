@@ -1,0 +1,14 @@
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3% 0%;
+    padding-top: 2%;
+    &__image {
+        width: fit-content;
+        padding-top: 2%;
+        img {
+            object-fit: cover;
+        }
+    }
+}

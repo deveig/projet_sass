@@ -1,0 +1,51 @@
+@use "../utils/variables" as var;
+
+@use "../utils/mixins" as mix;
+
+.saving-item {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    > div:nth-child(2n+1) {
+        position: relative;
+        z-index: 2;
+        opacity: 1;
+        cursor: pointer;
+        &:hover {
+            opacity: 0;
+            + div {
+                animation: fill 0.4s linear forwards;
+            }    
+        }
+    }
+  
+    > div:nth-child(2n) {
+        position: absolute;
+        top: 0px;
+        z-index: 1;
+        background-image: linear-gradient(0deg, nth(var.$color, 3), nth(var.$color, 2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        opacity: 0;
+    }
+}
+
+@keyframes fill {
+    0% {
+        opacity: 0;
+    }
+  
+    25% {
+        opacity: 0.2;
+    }
+  
+    75% {
+        opacity: 0.5;
+        animation-timing-function: ease-out;
+    }
+  
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,25 @@
+@use "../utils/variables" as var;
+
+.interactive-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: 50px;
+    margin: 5%;
+    padding: 5px 25px;
+    background: linear-gradient(175deg, nth(var.$color, 3), nth(var.$color, 2));
+    box-shadow: 2px 2px 5px 2px var.$secondary-dark-background;
+    border: none;
+    border-radius: var.$corner-shape;
+    color: white;
+    white-space: nowrap;
+    &:hover { 
+        box-shadow: 2px 2px 5px 2px darken(var.$secondary-dark-background, 10%);
+        opacity: 0.75;
+    }
+
+    &--padding {
+        padding: 5px 50px;
+    }
+}
